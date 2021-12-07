@@ -3,6 +3,14 @@ const { Cookbook } = require('../src/cookbook');
 describe('Cookbook', () => {
   describe('Adding recipes', () => {
     test('should allow a recipe to be added', () => {
+      //Arrange
+      const myCookbook = new Cookbook();
+
+      //Act
+      myCookbook.addRecipe(`fajitas`, [`chicken`, `salsa`, `tortillas`]);
+
+      //Assert
+      expect(myCookbook.recipes).toEqual({ fajitas: [`chicken`, `salsa`, `tortillas`]});
 
     });
   });
