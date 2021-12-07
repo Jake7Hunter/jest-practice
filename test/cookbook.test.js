@@ -18,15 +18,20 @@ describe('Cookbook', () => {
     test('should allow the recipes to be listed', () => {
       const myCookbook = new Cookbook();
 
-      myCookbook.addRecipe(`fajitas`, [`chicken`, `salsa`, `tortillas`])
+      myCookbook.addRecipe(`fajitas`, [`chicken`, `salsa`, `tortillas`]);
       const myRecipes = myCookbook.listRecipes();
 
-      expect(myRecipes).toEqual([`fajitas`])
+      expect(myRecipes).toEqual([`fajitas`]);
     });
   });
 
   describe('Retrieving a recipe', () => {
     test('should allow the ingredients for a recipe to be retrieved', () => {
+      const myCookbook =new Cookbook();
+
+      myCookbook.addRecipe(`fajitas`, [`chicken`, `salsa`, `tortillas`]);
+
+
 
     });
   });
@@ -36,9 +41,9 @@ describe('Cookbook', () => {
       const myCookbook = new Cookbook();
 
       
-      myCookbook.addRecipe(`fajitas`, [`chicken`, `salsa`, `tortillas`])
-      myCookbook.removeRecipe(`fajitas`)
-      myRecipes = myCookbook.listRecipes()
+      myCookbook.addRecipe(`fajitas`, [`chicken`, `salsa`, `tortillas`]);
+      myCookbook.removeRecipe(`fajitas`);
+      const myRecipes = myCookbook.listRecipes();
 
       expect(myRecipes).toEqual([]);
 
