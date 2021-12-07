@@ -30,9 +30,9 @@ describe('Cookbook', () => {
       const myCookbook =new Cookbook();
 
       myCookbook.addRecipe(`fajitas`, [`chicken`, `salsa`, `tortillas`]);
+      const myRecipes = myCookbook.getRecipe(`fajitas`);
 
-
-
+      expect(myRecipes).toEqual([`chicken`, `salsa`, `tortillas`]);
     });
   });
 
