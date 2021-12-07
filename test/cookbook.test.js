@@ -11,13 +11,17 @@ describe('Cookbook', () => {
 
       //Assert
       expect(myCookbook.recipes).toEqual({ fajitas: [`chicken`, `salsa`, `tortillas`]});
-
     });
   });
 
   describe('Listing recipes', () => {
     test('should allow the recipes to be listed', () => {
+      const myCookbook = new Cookbook();
 
+      myCookbook.addRecipe(`fajitas`, [`chicken`, `salsa`, `tortillas`])
+      const myRecipes = myCookbook.listRecipes();
+
+      expect(myRecipes).toEqual([`fajitas`])
     });
   });
 
