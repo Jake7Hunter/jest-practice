@@ -15,7 +15,14 @@ describe('CookbookCli', () => {
 
   describe('Listing recipes', () => {
     test('should display the correct message listing all of the recipe names', () => {
+      const myNewCookbook = new Cookbook();
+      const myNewCookbookCli = new CookbookCli(myNewCookbook);
 
+      myNewCookbookCli.add(`fajitas`, [`chicken`, `tortillas`]);
+
+      const message = myNewCookbookCli.list();
+
+      expect(message).toEqual(`You have the following recipes: fajitas`);
     });
   });
 
