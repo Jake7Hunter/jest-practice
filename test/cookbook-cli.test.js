@@ -28,6 +28,14 @@ describe('CookbookCli', () => {
 
   describe('Retrieving a recipe', () => {
     test('should display the ingredients required to make the specified recipe', () => {
+      const myNewCookbook = new Cookbook();
+      const myNewCookbookCli = new CookbookCli(myNewCookbook);
+
+      myNewCookbookCli.add(`fajitas`, [`chicken`, `tortillas`]);
+
+      const message = myNewCookbookCli.get(`fajitas`)
+
+      expect(message).toEqual(`The ingredients for fajitas are: chicken,tortillas`)
 
     });
   });
